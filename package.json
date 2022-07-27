@@ -7,7 +7,7 @@
   },
   "homepage": "https://next-auth-example.vercel.app",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 8083",
     "build": "next build",
     "start": "yarn && yarn build && (sleep 0.5 ; open http://localhost:8083) & next start -p 8083"
   },

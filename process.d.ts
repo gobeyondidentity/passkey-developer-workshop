@@ -2,15 +2,17 @@ declare namespace NodeJS {
   export interface ProcessEnv {
     NEXTAUTH_URL: string
     NEXTAUTH_SECRET: string
-    GITHUB_ID: string
-    GITHUB_SECRET: string
-    FACEBOOK_ID: string
-    FACEBOOK_SECRET: string
-    TWITTER_ID: string
-    TWITTER_SECRET: string
-    GOOGLE_ID: string
-    GOOGLE_SECRET: string
-    AUTH0_ID: string
-    AUTH0_SECRET: string
+    TENANT_ID: string
+    API_TOKEN: string
+    REALM_ID: string
+    AUTHENTICATOR_CONFIG_ID: string
+    APPLICATION_ID: string
+    APP_CLIENT_ID: string
+    APP_CLIENT_SECRET: string
+    ADMIN_REALM_ID: string
+    MGMT_API_CLIENT_ID: string
+    MGMT_API_CLIENT_SECRET: string
+    MGMT_API_APPLICATION_ID: string
+    REGION: string
   }
 }

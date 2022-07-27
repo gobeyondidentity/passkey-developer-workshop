@@ -11,18 +11,20 @@ const BindCredential = () => {
     const BeyondIdentityEmbeddedSdk = await import("../../utils/BeyondIdentityEmbeddedSdk");
     let embedded = new BeyondIdentityEmbeddedSdk.default();
     let username = bindCredentialUsername;
-    let response = await fetch('https://acme-cloud.byndid.com/credential-binding-link', {
+    let response = await fetch('/api/beyondidentity/get-credential-binding-link', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         'username': username,
-        'authenticator_type': 'web',
-        'delivery_method': 'return'
       })
     });
     let jsonResponse = await response.json();
+    if (response.status !== 200 || jsonResponse === null) {
+      setBindCredentialResult(jsonResponse);
+      return;
+    }
     let credentialBindingLink = jsonResponse.credential_binding_link;
     if (await embedded.isBindCredentialUrl(credentialBindingLink)) {
       let result = await embedded.bindCredential(credentialBindingLink);

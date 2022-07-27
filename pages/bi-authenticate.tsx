@@ -4,7 +4,6 @@ import { Credential } from "@beyondidentity/bi-sdk-js";
 
 const AuthenticateWithBeyondIdentity = () => {
   useEffect(() => {
-    console.log("HERE!!!");
     const authenticate = async () => {
       const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
       let embedded = new BeyondIdentityEmbeddedSdk.default();
