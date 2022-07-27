@@ -24,15 +24,15 @@ export default function IndexPage() {
 
         <div className="section-divider"></div>
 
-        <RecoverCredential></RecoverCredential>
-
-        <div className="section-divider"></div>
-
         <AuthenticateWithBeyondIdentity></AuthenticateWithBeyondIdentity>
 
         <div className="section-divider"></div>
 
         <GetCredentials></GetCredentials>
+
+        <div className="section-divider"></div>
+
+        <RecoverCredential></RecoverCredential>
       </main>
     </Layout>
   )
