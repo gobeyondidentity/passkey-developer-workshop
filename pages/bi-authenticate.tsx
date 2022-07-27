@@ -1,8 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Credential } from "@beyondidentity/bi-sdk-js";
+import Highlight from "react-highlight";
 
 const AuthenticateWithBeyondIdentity = () => {
+  const [biAuthenticateResult, setBiAuthenticateResult] = useState("");
+
   useEffect(() => {
     const authenticate = async () => {
       const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
@@ -10,8 +13,11 @@ const AuthenticateWithBeyondIdentity = () => {
       embedded.isAuthenticateUrl(window.location.href).then(async shouldAuthenticate => {
         if (shouldAuthenticate) {
           let biAuthenticateUrl = window.location.href;
-          let redirectURL = await biAuthenticate(biAuthenticateUrl);
-          window.location.href = redirectURL;
+          biAuthenticate(biAuthenticateUrl).then(redirectURL => {
+            window.location.href = redirectURL;
+          }).catch(error => {
+            setBiAuthenticateResult(error.toString());
+          });
         }
       });
     }
@@ -38,9 +44,34 @@ const AuthenticateWithBeyondIdentity = () => {
   }
 
   return (
-    <div className="d-flex justify-content-center">
-      <div className="spinner-border" role="status">
-        <span className="sr-only"></span>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
+      <div className="container">
+        <div className="row">
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+              <span className="sr-only"></span>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          {
+            biAuthenticateResult.length > 0 &&
+            <div className="row row-cols-1 row-cols-md-1 mt-3">
+              <div className="col">
+                <Highlight className='json'>
+                  {JSON.stringify(biAuthenticateResult, null, 2)}
+                </Highlight>
+              </div>
+            </div>
+          }
+        </div>
       </div>
     </div>
   );
