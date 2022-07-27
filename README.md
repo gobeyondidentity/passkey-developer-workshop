@@ -15,5 +15,6 @@
 ```
 git clone git@github.com:gobeyondidentity/neo-getting-started.git
 cd neo-getting-started
+cp .env.local.example .env.local
 yarn start
 ```
