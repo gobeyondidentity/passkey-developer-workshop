@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Credential } from "@beyondidentity/bi-sdk-js";
 
@@ -38,7 +38,11 @@ const AuthenticateWithBeyondIdentity = () => {
   }
 
   return (
-	<></>
+    <div className="d-flex justify-content-center">
+      <div className="spinner-border" role="status">
+        <span className="sr-only"></span>
+      </div>
+    </div>
   );
 };
 
