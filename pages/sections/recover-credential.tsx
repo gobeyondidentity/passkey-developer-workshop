@@ -42,7 +42,7 @@ const RecoverCredential = () => {
           <div className="col-lg-12 mx-auto">
             <h1 className="fw-light">Recover Credential</h1>
             <p className="lead text-muted">
-              If you have an account with a credential you can't access anymore,
+              If you have an account with a credential you can&apos;t access anymore,
               enter your username to recover your account and bind a credential to this device.
               Note: This requires a username for which an identity HAS been created before. It
               will fail if no identity exists for that username.

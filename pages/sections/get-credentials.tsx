@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { Credential } from '@beyondidentity/bi-sdk-js';
-
 import { Component } from "react";
 
 class GetCredentials extends Component<{}, { credentials: Credential[] }> {
@@ -54,7 +53,7 @@ class GetCredentials extends Component<{}, { credentials: Credential[] }> {
             <tbody>
               {this.state.credentials.map(credential => (
                 <tr key={credential.id}>
-                  <th scope="row"><img src={credential.theme.logoUrlLight} style={{ width: "50px" }}></img></th>
+                  <th scope="row"><img src={credential.theme.logoUrlLight} style={{ width: "50px" }} alt="Beyond Identity Credential Logo"></img></th>
                   <td>{credential.identity.username}</td>
                   <td>{credential.identity.displayName}</td>
                   <td>{credential.id}</td>
