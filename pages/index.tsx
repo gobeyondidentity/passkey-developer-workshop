@@ -2,7 +2,6 @@ import Layout from "../components/layout";
 import BindCredential from "./sections/BindCredential";
 import RecoverCredential from "./sections/RecoverCredential";
 import GetCredentials from "./sections/GetCredentials";
-import AuthenticateWithBeyondIdentity from "./sections/AuthenticateWithBeyondIdentity";
 
 export default function IndexPage() {
   return (
@@ -21,10 +20,6 @@ export default function IndexPage() {
         <div className="section-divider"></div>
 
         <BindCredential></BindCredential>
-
-        <div className="section-divider"></div>
-
-        <AuthenticateWithBeyondIdentity></AuthenticateWithBeyondIdentity>
 
         <div className="section-divider"></div>
 
