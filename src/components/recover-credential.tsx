@@ -8,7 +8,7 @@ const RecoverCredential = () => {
 
   async function handleRecoverCredentialClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
-    const BeyondIdentityEmbeddedSdk = await import("../../utils/BeyondIdentityEmbeddedSdk");
+    const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
     let embedded = new BeyondIdentityEmbeddedSdk.default();
     let username = recoverCredentialUsername;
     let response = await fetch('/api/beyondidentity/recover-credential-binding-link', {

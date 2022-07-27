@@ -8,7 +8,7 @@ const BindCredential = () => {
 
   async function handleBindCredentialClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
-    const BeyondIdentityEmbeddedSdk = await import("../../utils/BeyondIdentityEmbeddedSdk");
+    const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
     let embedded = new BeyondIdentityEmbeddedSdk.default();
     let username = bindCredentialUsername;
     let response = await fetch('/api/beyondidentity/get-credential-binding-link', {

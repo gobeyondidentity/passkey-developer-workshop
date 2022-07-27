@@ -1,5 +1,5 @@
 import { SessionProvider } from "next-auth/react"
-import "../node_modules/highlight.js/styles/monokai.css"
+import "../../node_modules/highlight.js/styles/monokai.css"
 import "./styles.css"
 
 import type { AppProps } from "next/app"

@@ -9,7 +9,7 @@ class GetCredentials extends Component<{}, { credentials: Credential[] }> {
   }
 
   async componentDidMount() {
-    const BeyondIdentityEmbeddedSdk = await import("../../utils/BeyondIdentityEmbeddedSdk");
+    const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
     let embedded = new BeyondIdentityEmbeddedSdk.default();
     this.setState({ credentials: await embedded.getCredentials() });
     window.addEventListener("message", async (event) => {
@@ -23,7 +23,7 @@ class GetCredentials extends Component<{}, { credentials: Credential[] }> {
 
   async handleDeleteCredentialClick(e: React.MouseEvent<HTMLButtonElement>, credential: Credential) {
     e.preventDefault();
-    const BeyondIdentityEmbeddedSdk = await import("../../utils/BeyondIdentityEmbeddedSdk");
+    const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
     let embedded = new BeyondIdentityEmbeddedSdk.default();
     let result = window.confirm(`Are you sure you want to delete credential with username \"${credential.identity.username}\"?`);
     if (result) {
