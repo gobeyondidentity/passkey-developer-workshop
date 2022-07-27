@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "description": "An example project for NextAuth.js with Next.js",
+  "repository": "https://github.com/nextauthjs/next-auth-example.git",
+  "bugs": {
+    "url": "https://github.com/nextauthjs/next-auth/issues"
+  },
+  "homepage": "https://next-auth-example.vercel.app",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "yarn && yarn build && (sleep 0.5 ; open http://localhost:8083) & next start -p 8083"
+  },
+  "author": "Iain Collins <me@iaincollins.com>",
+  "contributors": [
+    "Balázs Orbán <info@balazsorban.com>",
+    "Nico Domino <yo@ndo.dev>",
+    "Lluis Agusti <hi@llu.lu>"
+  ],
+  "dependencies": {
+    "@beyondidentity/bi-sdk-js": "1.0.7",
+    "bootstrap": "^5.2.0",
+    "next": "latest",
+    "next-auth": "latest",
+    "nodemailer": "^6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-highlight": "^0.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17",
+    "@types/react": "^18.0.15",
+    "@types/react-highlight": "^0.12.5",
+    "typescript": "^4"
+  }
+}
