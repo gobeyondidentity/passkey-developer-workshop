@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
-import BindCredential from "./sections/BindCredential";
-import RecoverCredential from "./sections/RecoverCredential";
-import GetCredentials from "./sections/GetCredentials";
+import BindCredential from "./sections/bind-credential";
+import RecoverCredential from "./sections/recover-credential";
+import GetCredentials from "./sections/get-credentials";
 
 export default function IndexPage() {
   return (

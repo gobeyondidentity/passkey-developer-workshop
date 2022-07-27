@@ -9,10 +9,10 @@ export const authOptions: NextAuthOptions = {
       id: "beyondidentity",
       name: "Beyond Identity",
       type: "oauth",
-      wellKnown: "https://auth-us.beyondidentity.com/v1/tenants/00012da391ea206d/realms/862e4b72cfdce072/applications/2d19c741-74e5-48f1-8709-cc2c5f0f101e/.well-known/openid-configuration",
+      wellKnown: `https://auth-us.beyondidentity.com/v1/tenants/${process.env.TENANT_ID}/realms/${process.env.REALM_ID}/applications/${process.env.APPLICATION_ID}/.well-known/openid-configuration`,
       authorization: { params: { scope: "openid" } },
-      clientId: "31eQMDR_ftmj7tGoD3PZWb-n",
-      clientSecret: "6-BdFQed42oiZI6QyHaG_KFbONHFX_wUcg1pfHRhlfEb4Wyj",
+      clientId: process.env.APP_CLIENT_ID,
+      clientSecret: process.env.APP_CLIENT_SECRET,
       idToken: true,
       checks: ["state"],
       profile(profile) {
