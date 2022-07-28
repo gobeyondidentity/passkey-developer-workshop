@@ -13,7 +13,7 @@ export default async function handler(
     });
   }
 
-  // --- 1. Get client credentials
+  // --- 1. Get access token from client credentials
   const tokenResponse = await fetch(
     `${authUrl().toString()}v1/tenants/${process.env.TENANT_ID}/realms/${process.env.ADMIN_REALM_ID}/applications/${process.env.MGMT_API_APPLICATION_ID}/token`,
     {
