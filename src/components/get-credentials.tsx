@@ -37,7 +37,7 @@ class GetCredentials extends Component<{}, { credentials: Credential[] }> {
       <main className="flex-shrink-0 mb-5">
         <section className="py-1 container">
           <br></br>
-          <h1 className="fw-light">Passkeys</h1>
+          <h3 className="fw-light">Local Passkeys</h3>
           <br></br>
           <table className="table table-hover">
             <thead>

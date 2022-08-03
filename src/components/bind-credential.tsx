@@ -40,9 +40,10 @@ const BindCredential = () => {
       <section className="py-1 container">
         <div className="row py-3">
           <div className="col-lg-12 mx-auto">
-            <h1 className="fw-light">Create User and Passkey</h1>
+            <h3 className="fw-light">Create User and Passkey</h3>
             <p className="lead text-muted">
-              To get started, create a passkey on this device. <br/><br/>
+              To get started, create a passkey on this device. <br/><br/> 
+              This will create a new user in the realm with the specified username and immediately create a passkey for that user, on this browser.
             </p>
 
             <div className="row row-cols-1 row-cols-md-1">
