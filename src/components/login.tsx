@@ -10,10 +10,10 @@ export default function Login() {
   return (
     
       <main className="flex-shrink-0 mb-5">
-        
         <noscript>
           <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
         </noscript>
+
         <div className={styles.signedInStatus}>
           <p className={`nojs-show ${!session && loading ? styles.loading : styles.loaded}`}>
             {!session && (

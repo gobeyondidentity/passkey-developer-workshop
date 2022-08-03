@@ -16,15 +16,14 @@ export default function IndexPage() {
             id="tab"
             className="mb-3 justify-content-center"
           >
-            <Tab eventKey="signup" title="Signup" active>
-               <Signup></Signup>
-            </Tab>
             <Tab eventKey="login" title="Login">
               <Login></Login>
             </Tab>
+            <Tab eventKey="signup" title="Signup">
+               <Signup></Signup>
+            </Tab>
+            
         </Tabs>
-        <div className="section-divider"></div>
-        
       </main>
     </Layout>
   )
