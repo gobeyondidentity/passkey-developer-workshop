@@ -13,31 +13,9 @@ export default async function handler(
     });
   }
 
-  // --- 1. Get access token from client credentials
-  const tokenResponse = await fetch(
-    `${authUrl().toString()}v1/tenants/${process.env.TENANT_ID}/realms/${process.env.ADMIN_REALM_ID}/applications/${process.env.MGMT_API_APPLICATION_ID}/token`,
-    {
-      body: (() => {
-        let formData = new URLSearchParams();
-        formData.append("grant_type", "client_credentials");
-        return formData;
-      })(),
-      headers: {
-        'Authorization': 'Basic ' + Buffer.from(`${process.env.MGMT_API_CLIENT_ID}:${process.env.MGMT_API_CLIENT_SECRET}`).toString('base64'),
-      },
-      method: 'POST'
-    }
-  );
+  let accessToken = process.env.API_TOKEN;
 
-  let tokenResponseJson = await tokenResponse.json();
-
-  if (tokenResponse.status !== 200) {
-    return res.status(400).json(tokenResponseJson);
-  }
-
-  let accessToken = tokenResponseJson.access_token;
-
-  // --- 2. Create an identity
+  // --- 1. Create an identity
   const identityResponse = await fetch(
     `${apiUrl().toString()}v1/tenants/${process.env.TENANT_ID}/realms/${process.env.REALM_ID}/identities`,
     {
@@ -66,7 +44,7 @@ export default async function handler(
 
   let identityId = identityResponseJson.id;
 
-  // --- 3. Get credential binding link for identity
+  // --- 2. Get credential binding link for identity
   const credentialBindingLinkResponse = await fetch(
     `${apiUrl().toString()}v1/tenants/${process.env.TENANT_ID}/realms/${process.env.REALM_ID}/identities/${identityId}/credential-binding-jobs`,
     {
