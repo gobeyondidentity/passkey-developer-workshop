@@ -9,10 +9,6 @@ declare namespace NodeJS {
     APPLICATION_ID: string
     APP_CLIENT_ID: string
     APP_CLIENT_SECRET: string
-    ADMIN_REALM_ID: string
-    MGMT_API_CLIENT_ID: string
-    MGMT_API_CLIENT_SECRET: string
-    MGMT_API_APPLICATION_ID: string
     REGION: string
   }
 }
