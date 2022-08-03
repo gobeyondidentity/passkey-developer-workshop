@@ -43,8 +43,8 @@ const RecoverCredential = () => {
           <div className="col-lg-12 mx-auto">
             <h3 className="fw-light">Add Passkey for Existing User</h3>
             <p className="lead text-muted">
-              If you have an account for a user, you can use this flow to create a passkey on this device or browser. 
-              Enter an username, and click &quot;Get Passkey&quot; to create the key.
+              If you have an existing account, this flow creates a new local passkey for that user. 
+              Enter a username for an existing user, and click &quot;Get Passkey&quot; to create the key.
               <br/><br/>
               Note: This requires a username for which an identity HAS been created before in this realm. It
               will fail if no identity exists for that username.
