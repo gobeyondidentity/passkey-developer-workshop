@@ -41,9 +41,9 @@ const RecoverCredential = () => {
       <section className="py-1 container">
         <div className="row py-3">
           <div className="col-lg-12 mx-auto">
-            <h3 className="fw-light">Add Passkey to Verified User</h3>
+            <h3 className="fw-light">Add Passkey for Existing User</h3>
             <p className="lead text-muted">
-              If you have an account for which you have already verified the users identity, you can use this flow to create a passkey on this device. 
+              If you have an account for a user, you can use this flow to create a passkey on this device or browser. 
               Enter an username, and click &quot;Get Passkey&quot; to create the key.
               <br/><br/>
               Note: This requires a username for which an identity HAS been created before in this realm. It

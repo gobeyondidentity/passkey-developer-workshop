@@ -30,7 +30,7 @@ export default function IndexPage() {
             <Tab eventKey="signin" title="3. Sign in with Passkey">
               <Login></Login>
             </Tab>
-            <Tab eventKey="recover" title="4. Verified User">
+            <Tab eventKey="recover" title="4. Existing User">
               <RecoverCredential></RecoverCredential>
             </Tab>
         </Tabs>
