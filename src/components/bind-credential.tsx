@@ -40,12 +40,9 @@ const BindCredential = () => {
       <section className="py-1 container">
         <div className="row py-3">
           <div className="col-lg-12 mx-auto">
-            <h1 className="fw-light">Bind Credential</h1>
+            <h1 className="fw-light">Create User and Passkey</h1>
             <p className="lead text-muted">
-              To get started using the Embedded SDK sample app, enter any
-              username to bind a credential to this device. Note: This requires
-              a username for which an identity has NOT been created before. It
-              will fail if the username is taken.
+              To get started, create a passkey on this device. <br/><br/>
             </p>
 
             <div className="row row-cols-1 row-cols-md-1">
@@ -62,7 +59,7 @@ const BindCredential = () => {
                     onClick={handleBindCredentialClick}
                     className="btn btn-primary btn-lg px-4"
                   >
-                    Bind Credential
+                    Create
                   </button>
                 </div>
               </div>

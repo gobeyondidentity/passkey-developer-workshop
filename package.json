@@ -21,6 +21,7 @@
     "next": "latest",
     "next-auth": "latest",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.4.0",
     "react-dom": "^18.2.0",
     "react-highlight": "^0.14.0"
   },

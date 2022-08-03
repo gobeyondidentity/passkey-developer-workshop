@@ -40,11 +40,12 @@ const RecoverCredential = () => {
       <section className="py-1 container">
         <div className="row py-3">
           <div className="col-lg-12 mx-auto">
-            <h1 className="fw-light">Recover Credential</h1>
+            <h3 className="fw-light">Add Passkey / Recover</h3>
             <p className="lead text-muted">
               If you have an account with a credential you can&apos;t access anymore,
-              enter your username to recover your account and bind a credential to this device.
-              Note: This requires a username for which an identity HAS been created before. It
+              enter your username add a new Passkey to this device.
+              <br/><br/>
+              Note: This requires a username for which an identity HAS been created before in this realm. It
               will fail if no identity exists for that username.
             </p>
 
@@ -62,7 +63,7 @@ const RecoverCredential = () => {
                     onClick={handleRecoverCredentialClick}
                     className="btn btn-primary btn-lg px-4"
                   >
-                    Recover Credential
+                    Add Passkey
                   </button>
                 </div>
               </div>
