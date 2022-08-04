@@ -36,37 +36,43 @@ class GetCredentials extends Component<{}, { credentials: Credential[] }> {
     return (
       <main className="flex-shrink-0 mb-5">
         <section className="py-1 container">
-          <br></br>
-          <h1 className="fw-light">Credentials</h1>
-          <br></br>
-          <table className="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Logo</th>
-                <th scope="col">Username</th>
-                <th scope="col">Display Name</th>
-                <th scope="col">ID</th>
-                <th scope="col">Delete</th>
-              </tr>
-            </thead>
+          <div className="row py-3">
+            <div className="col-lg-12 mx-auto">
+              <br></br>
+              <h3 className="fw-light">Local Passkeys</h3>
+              <br></br>
+              <div className="table-responsive">
+                <table className="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Logo</th>
+                      <th scope="col">Username</th>
+                      <th scope="col">Display Name</th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
 
-            <tbody>
-              {this.state.credentials.map(credential => (
-                <tr key={credential.id}>
-                  <th scope="row"><img src={credential.theme.logoUrlLight} style={{ width: "50px" }} alt="Beyond Identity Credential Logo"></img></th>
-                  <td>{credential.identity.username}</td>
-                  <td>{credential.identity.displayName}</td>
-                  <td>{credential.id}</td>
-                  <td><button
-                    type="button"
-                    value={credential.id}
-                    onClick={event => this.handleDeleteCredentialClick(event, credential)}
-                    className="btn btn-primary btn-lg px-4"
-                  >Delete</button></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  <tbody>
+                    {this.state.credentials.map(credential => (
+                      <tr key={credential.id}>
+                        <td><button
+                          type="button"
+                          value={credential.id}
+                          onClick={event => this.handleDeleteCredentialClick(event, credential)}
+                          className="btn btn-primary btn-md"
+                        >Delete</button></td>
+                        <th scope="row"><img src={credential.theme.logoUrlLight} style={{ width: "50px" }} alt="Beyond Identity Credential Logo"></img></th>
+                        <td>{credential.identity.username}</td>
+                        <td>{credential.identity.displayName}</td>
+                        <td>{credential.id}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
     );

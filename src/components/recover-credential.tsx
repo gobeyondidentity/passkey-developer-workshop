@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Highlight from "react-highlight";
+import GetCredentials from "./get-credentials";
 
 const RecoverCredential = () => {
   const [recoverCredentialUsername, setRecoverCredentialUsername] = useState(String);
@@ -40,11 +41,12 @@ const RecoverCredential = () => {
       <section className="py-1 container">
         <div className="row py-3">
           <div className="col-lg-12 mx-auto">
-            <h1 className="fw-light">Recover Credential</h1>
+            <h3 className="fw-light">Add Passkey for Existing User</h3>
             <p className="lead text-muted">
-              If you have an account with a credential you can&apos;t access anymore,
-              enter your username to recover your account and bind a credential to this device.
-              Note: This requires a username for which an identity HAS been created before. It
+              If you have an existing account, this flow creates a new local passkey for that user. 
+              Enter a username for an existing user, and click &quot;Get Passkey&quot; to create the key.
+              <br/><br/>
+              Note: This requires a username for which an identity HAS been created before in this realm. It
               will fail if no identity exists for that username.
             </p>
 
@@ -62,7 +64,7 @@ const RecoverCredential = () => {
                     onClick={handleRecoverCredentialClick}
                     className="btn btn-primary btn-lg px-4"
                   >
-                    Recover Credential
+                    Get Passkey
                   </button>
                 </div>
               </div>
@@ -80,6 +82,8 @@ const RecoverCredential = () => {
           </div>
         </div>
       </section>
+      
+      <GetCredentials></GetCredentials>
     </main>
   );
 };
