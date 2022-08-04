@@ -19,7 +19,7 @@ export default function Login() {
               <div className={styles.signedInStatus}>
                 <h3 className="fw-light">Sign in with Local Passkey</h3>
                 <p className="lead text-muted">Click Sign in to initiate the OpenID Connect flow and sign in with the Passkey(s) created in step 1.</p>
-                <p className={`nojs-show ${!session && loading ? styles.loading : styles.loaded}`}>
+                <div className={`nojs-show ${!session && loading ? styles.loading : styles.loaded}`}>
                   {!session && (
                     <>
                       
@@ -48,7 +48,7 @@ export default function Login() {
                       <div className="lead">Click Sign out above to try again with a different passkey.</div>
                     </div>
                   )}
-                </p>
+                </div>
               </div>
             </div>
           </div>
