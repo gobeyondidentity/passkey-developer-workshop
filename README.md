@@ -8,9 +8,14 @@
    </p>
 </p>
 
-# Beyond Identity Getting Started
+# Beyond Identity | Getting Started
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+This is the accompanying example for the Getting Started section of the Developer Docs. 
+
+To learn more about this repo, read the docs:
+https://developer.beyondidentity.com/docs/v1/getting-started
 
 ```
 git clone git@github.com:gobeyondidentity/neo-getting-started.git
@@ -18,3 +23,10 @@ cd neo-getting-started
 cp .env.local.example .env.local <- fill these values in using the getting started guide
 yarn start
 ```
+
+## Project Resources
+
+| Resource                                   | Description                                                                   |
+| ------------------------------------------ | ----------------------------------------------------------------------------- |
+| [CODEOWNERS](https://github.com/gobeyondidentity/getting-started/blob/main/CODEOWNERS)                 | Outlines the project lead(s)                                                  |
+| [LICENSE](https://github.com/gobeyondidentity/getting-started/blob/main/LICENSE)                       | Apache License, Version 2.0                                                   |
