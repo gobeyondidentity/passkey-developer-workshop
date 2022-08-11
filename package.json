@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next build && ((sleep 0.5 ; open http://localhost:8083) & next -p 8083)",
     "build": "next build",
-    "start": "yarn install && next build && ((sleep 0.5 ; open http://localhost:8083) & next start -p 8083)"
+    "start": "yarn install --ignore-engines && next build && ((sleep 0.5 ; open http://localhost:8083) & next start -p 8083)"
   },
   "author": "Ismail Mustafa <ismail.mustafa@beyondidentity.com>",
   "contributors": [
