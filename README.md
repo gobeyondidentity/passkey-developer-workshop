@@ -19,7 +19,7 @@ https://developer.beyondidentity.com/docs/v1/getting-started
 
 ```
 git clone git@github.com:gobeyondidentity/neo-getting-started.git
-cd neo-getting-started
+cd getting-started
 cp .env.local.example .env.local <- fill these values in using the getting started guide
 yarn start
 ```
