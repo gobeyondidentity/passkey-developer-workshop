@@ -27,20 +27,19 @@ const AuthenticateWithBeyondIdentity = () => {
   async function biAuthenticate(url: string): Promise<string> {
     const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
     let embedded = new BeyondIdentityEmbeddedSdk.default();
-    let result = await embedded.authenticate(url, (credentials: Credential[]) => {
-      let promptText = credentials.map((credential, index) => {
-        return `${index}: ${credential.identity.username}`;
-      }).join("\n");
-      let selectedIndex = parseInt(prompt(promptText, "index")!!);
-      if (selectedIndex >= 0 && selectedIndex < credentials.length) {
-        let selectedId = credentials[selectedIndex].id;
-        return Promise.resolve(selectedId);
-      } else {
-        // This will fail in core as it won't match to any id
-        return Promise.resolve("unknown_id");
-      }
-    });
-    return Promise.resolve(result.redirectURL);
+    let credentials = await embedded.getCredentials();
+    let promptText = credentials.map((credential, index) => {
+      return `${index}: ${credential.identity.username}`;
+    }).join("\n");
+    let selectedIndex = parseInt(prompt(promptText, "index")!!);
+    if (selectedIndex >= 0 && selectedIndex < credentials.length) {
+      let selectedId = credentials[selectedIndex].id;
+      let result = await embedded.authenticate(url, selectedId);
+      return Promise.resolve(result.redirectURL);
+    } else {
+      // This will fail in core as it won't match to any id
+      return Promise.resolve("unknown_id");
+    }
   }
 
   return (
