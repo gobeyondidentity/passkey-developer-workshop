@@ -17,9 +17,9 @@ export const authOptions: NextAuthOptions = {
       checks: ["state"],
       profile(profile) {
         return {
-          id: profile.sub,
-          name: profile.sub,
-          email: profile.sub,
+          id: profile.name,
+          name: profile.name,
+          email: profile.name,
         }
       },
     },
