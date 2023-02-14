@@ -10,9 +10,16 @@ import GetPasskeys from "../components/get-passkeys";
 import BindPasskey from "../components/bind-passkey";
 import RecoverPasskey from "../components/recover-passkey";
 
+import { useEffect } from 'react';
+import * as FullStory from '@fullstory/browser'
+
 export default function IndexPage() {
   const [key, setKey] = useState('home');
-  console.log(key);
+  
+  useEffect(() => {
+    FullStory.init({ orgId: 'o-1CSBYD-na1'});
+  }, []);
+
   return (
     <Layout>
       <main className="flex-shrink-0 mb-5">
