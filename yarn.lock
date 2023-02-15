@@ -37,6 +37,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fullstory/browser@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@fullstory/browser/-/browser-1.6.2.tgz#fa636a4579779fe23fa87a11dd175be25c67185c"
+  integrity sha512-r3kPrTKijI/LkdSW7t1GlXPn4jPuZL4AFGDJBWMj4E4HLeF2lCvZtSOZ1YTwZtJFciLp/+KOIW3qBDkqqXC2qw==
+
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"
@@ -427,9 +432,9 @@ callsites@^3.0.0:
   integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
 
 caniuse-lite@^1.0.30001332:
-  version "1.0.30001370"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001370.tgz#0a30d4f20d38b9e108cc5ae7cc62df9fe66cd5ba"
-  integrity sha512-3PDmaP56wz/qz7G508xzjx8C+MC2qEm4SYhSEzC9IBROo+dGXFWRuaXkWti0A9tuI00g+toiriVqxtWMgl350g==
+  version "1.0.30001452"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001452.tgz"
+  integrity sha512-Lkp0vFjMkBB3GTpLR8zk4NwW5EdRdnitwYJHDOOKIU85x4ckYCPQ+9WlVvSVClHxVReefkUMtWZH2l9KGlD51w==
 
 chalk@^4.0.0:
   version "4.1.2"

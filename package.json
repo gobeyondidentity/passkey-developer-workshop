@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "@beyondidentity/bi-sdk-js": "2.0.0",
+    "@fullstory/browser": "^1.6.2",
     "bootstrap": "^5.2.0",
     "next": "latest",
     "next-auth": "latest",
