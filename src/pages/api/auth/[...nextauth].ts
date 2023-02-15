@@ -1,4 +1,5 @@
 import NextAuth, { NextAuthOptions } from "next-auth"
+import { authUrl } from "../../../utils/url"
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -9,7 +10,7 @@ export const authOptions: NextAuthOptions = {
       id: "beyondidentity",
       name: "Beyond Identity",
       type: "oauth",
-      wellKnown: `https://auth-us.beyondidentity.com/v1/tenants/${process.env.TENANT_ID}/realms/${process.env.REALM_ID}/applications/${process.env.APPLICATION_ID}/.well-known/openid-configuration`,
+      wellKnown: `${authUrl().toString()}v1/tenants/${process.env.TENANT_ID}/realms/${process.env.REALM_ID}/applications/${process.env.APPLICATION_ID}/.well-known/openid-configuration`,
       authorization: { params: { scope: "openid" } },
       clientId: process.env.APP_CLIENT_ID,
       clientSecret: process.env.APP_CLIENT_SECRET,
