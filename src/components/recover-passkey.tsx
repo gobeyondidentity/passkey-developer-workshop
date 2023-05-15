@@ -26,9 +26,9 @@ const RecoverPasskey = () => {
       setRecoverPasskeyResult(jsonResponse);
       return;
     }
-    let credentialBindingLink = jsonResponse.credential_binding_link;
-    if (await embedded.isBindPasskeyUrl(credentialBindingLink)) {
-      let result = await embedded.bindPasskey(credentialBindingLink);
+    let bindingLink = jsonResponse.credential_binding_link;
+    if (await embedded.isBindPasskeyUrl(bindingLink)) {
+      let result = await embedded.bindPasskey(bindingLink);
       setRecoverPasskeyResult(result);
       window.postMessage("update-passkeys", "*");
     } else {
