@@ -1,44 +1,44 @@
-import { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import Highlight from "react-highlight";
+import { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import Highlight from 'react-highlight';
 
 const AuthenticateWithBeyondIdentity = () => {
-  const [biAuthenticateResult, setBiAuthenticateResult] = useState("");
+  const [biAuthenticateResult, setBiAuthenticateResult] = useState('');
 
   useEffect(() => {
-    const authenticate = async () => {
-      const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
-      let embedded = new BeyondIdentityEmbeddedSdk.default();
-      embedded.isAuthenticateUrl(window.location.href).then(async shouldAuthenticate => {
-        if (shouldAuthenticate) {
-          let biAuthenticateUrl = window.location.href;
-          biAuthenticate(biAuthenticateUrl).then(redirectURL => {
-            window.location.href = redirectURL;
-          }).catch(error => {
-            setBiAuthenticateResult(error.toString());
-          });
-        }
-      });
-    }
-    authenticate().catch(console.error);
+    // const authenticate = async () => {
+    //   const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
+    //   let embedded = new BeyondIdentityEmbeddedSdk.default();
+    //   embedded.isAuthenticateUrl(window.location.href).then(async shouldAuthenticate => {
+    //     if (shouldAuthenticate) {
+    //       let biAuthenticateUrl = window.location.href;
+    //       biAuthenticate(biAuthenticateUrl).then(redirectURL => {
+    //         window.location.href = redirectURL;
+    //       }).catch(error => {
+    //         setBiAuthenticateResult(error.toString());
+    //       });
+    //     }
+    //   });
+    // }
+    // authenticate().catch(console.error);
   }, []);
 
   async function biAuthenticate(url: string): Promise<string> {
-    const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
-    let embedded = new BeyondIdentityEmbeddedSdk.default();
-    let passkeys = await embedded.getPasskeys();
-    let promptText = passkeys.map((passkey, index) => {
-      return `${index}: ${passkey.identity.username}`;
-    }).join("\n");
-    let selectedIndex = parseInt(prompt(promptText, "index")!!);
-    if (selectedIndex >= 0 && selectedIndex < passkeys.length) {
-      let selectedId = passkeys[selectedIndex].id;
-      let result = await embedded.authenticate(url, selectedId);
-      return Promise.resolve(result.redirectUrl);
-    } else {
-      // This will fail in core as it won't match to any id
-      return Promise.resolve("unknown_id");
-    }
+    // const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
+    // let embedded = new BeyondIdentityEmbeddedSdk.default();
+    // let passkeys = await embedded.getPasskeys();
+    // let promptText = passkeys.map((passkey, index) => {
+    //   return `${index}: ${passkey.identity.username}`;
+    // }).join("\n");
+    // let selectedIndex = parseInt(prompt(promptText, "index")!!);
+    // if (selectedIndex >= 0 && selectedIndex < passkeys.length) {
+    //   let selectedId = passkeys[selectedIndex].id;
+    //   let result = await embedded.authenticate(url, selectedId);
+    //   return Promise.resolve(result.redirectUrl);
+    // } else {
+    //   // This will fail in core as it won't match to any id
+    //   return Promise.resolve("unknown_id");
+    // }
   }
 
   return (
@@ -59,16 +59,15 @@ const AuthenticateWithBeyondIdentity = () => {
           </div>
         </div>
         <div className="row">
-          {
-            biAuthenticateResult.length > 0 &&
+          {biAuthenticateResult.length > 0 && (
             <div className="row row-cols-1 row-cols-md-1 mt-3">
               <div className="col">
-                <Highlight className='json'>
+                <Highlight className="json">
                   {JSON.stringify(biAuthenticateResult, null, 2)}
                 </Highlight>
               </div>
             </div>
-          }
+          )}
         </div>
       </div>
     </div>
