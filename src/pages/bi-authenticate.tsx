@@ -23,7 +23,7 @@ const AuthenticateWithBeyondIdentity = () => {
     // authenticate().catch(console.error);
   }, []);
 
-  async function biAuthenticate(url: string): Promise<string> {
+  // async function biAuthenticate(url: string): Promise<string> {
     // const BeyondIdentityEmbeddedSdk = await import("../utils/BeyondIdentityEmbeddedSdk");
     // let embedded = new BeyondIdentityEmbeddedSdk.default();
     // let passkeys = await embedded.getPasskeys();
@@ -39,7 +39,7 @@ const AuthenticateWithBeyondIdentity = () => {
     //   // This will fail in core as it won't match to any id
     //   return Promise.resolve("unknown_id");
     // }
-  }
+  // }
 
   return (
     <div
