@@ -18,8 +18,8 @@ To learn more about this repo, read the docs:
 https://developer.beyondidentity.com/docs/v1/getting-started
 
 ```
-git clone git@github.com:gobeyondidentity/neo-getting-started.git
-cd getting-started
+git clone git@github.com:gobeyondidentity/passkey-developer-workshop.git
+cd passkey-developer-workshop
 cp .env.local.example .env.local <- fill these values in using the getting started guide
 yarn start
 ```
